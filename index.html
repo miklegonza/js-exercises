@@ -12,8 +12,126 @@
         />
         <link rel="stylesheet" href="assets/css/style.css" />
     </head>
-    <body>
-        <h1>Javascript exercises</h1>
+    <body class="bg-dark">
+        <nav class="navbar navbar-expand-lg bg-warning">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <h1 class="h2">Exercises</h1>
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent"
+                    aria-controls="navbarContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="#"
+                            >
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="https://github.com/miklegonza/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container my-5">
+            <section class="row mb-5">
+                <div class="col-4">
+                    <article class="bg-info-subtle px-4 py-3 mx-3 rounded">
+                        <h3>Sumas</h3>
+                        <p class="m-0">
+                            Se necesitan sumar los números del 1 a n, donde n es
+                            un número que le pedimos al usuario.
+                        </p>
+                        <form>
+                            <div class="mb-3">
+                                <input
+                                    type="text"
+                                    inputmode="numeric"
+                                    class="form-control my-3"
+                                    id="firstInput"
+                                    placeholder="Ingrese un número"
+                                />
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary my-2 w-25 fw-bold"
+                                >
+                                    Enviar
+                                </button>
+                            </div>
+                            <div
+                                id="firstResult"
+                                class="text-center fw-bold"
+                            ></div>
+                        </form>
+                    </article>
+                </div>
+                <div class="col-4">
+                    <article class="bg-info-subtle px-4 py-3 rounded">
+                        <h3>Pares</h3>
+                        <p class="m-0">
+                            Se necesita validar si un número ingresado por el
+                            usuario es par o impar.
+                        </p>
+                        <form>
+                            <div class="mb-3">
+                                <input
+                                    type="text"
+                                    inputmode="numeric"
+                                    class="form-control my-3"
+                                    id="secondInput"
+                                    placeholder="Ingrese un número"
+                                />
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary my-2 w-25 fw-bold"
+                                >
+                                    Enviar
+                                </button>
+                            </div>
+                            <div
+                                id="secondResult"
+                                class="text-center fw-bold"
+                            ></div>
+                        </form>
+                    </article>
+                </div>
+                <div class="col-4">
+                    <article class="bg-info-subtle px-4 py-3 rounded">
+                        texto
+                    </article>
+                </div>
+            </section>
+            <section class="row justify-content-center">
+                <article class="col-4">texto</article>
+                <article class="col-4">texto</article>
+            </section>
+        </main>
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
