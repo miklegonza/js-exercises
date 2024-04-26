@@ -72,12 +72,17 @@
                                     class="form-control my-3"
                                     id="firstInput"
                                     placeholder="Ingrese un número"
+                                    required
                                 />
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button
-                                    type="submit"
-                                    class="btn btn-primary my-2 w-25 fw-bold"
+                                    type="button"
+                                    class="btn btn-primary my-2 fw-bold"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1"
+                                    aria-expanded="false"
+                                    aria-controls="collapse1"
                                 >
                                     Enviar
                                 </button>
@@ -87,6 +92,9 @@
                                 class="text-center fw-bold"
                             ></div>
                         </form>
+                        <div class="collapse" id="collapse1">
+                            <div class="card card-body"></div>
+                        </div>
                     </article>
                 </div>
                 <div class="col-4">
@@ -104,12 +112,17 @@
                                     class="form-control my-3"
                                     id="secondInput"
                                     placeholder="Ingrese un número"
+                                    required
                                 />
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button
-                                    type="submit"
-                                    class="btn btn-primary my-2 w-25 fw-bold"
+                                    type="button"
+                                    class="btn btn-primary my-2 fw-bold"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2"
+                                    aria-expanded="false"
+                                    aria-controls="collapse2"
                                 >
                                     Enviar
                                 </button>
@@ -119,6 +132,9 @@
                                 class="text-center fw-bold"
                             ></div>
                         </form>
+                        <div class="collapse" id="collapse2">
+                            <div class="card card-body"></div>
+                        </div>
                     </article>
                 </div>
                 <div class="col-4">
@@ -131,19 +147,36 @@
                             solicitadas por el mismo.
                         </p>
                         <form>
-                            <div class="mb-3">
-                                <input
-                                    type="text"
-                                    inputmode="numeric"
-                                    class="form-control my-3"
-                                    id="firstInput"
-                                    placeholder="Ingrese un número"
-                                />
+                            <div class="row">
+                                <div class="col-md col-12">
+                                    <input
+                                        type="text"
+                                        inputmode="numeric"
+                                        class="form-control my-3"
+                                        id="firstInput"
+                                        placeholder="Número"
+                                        required
+                                    />
+                                </div>
+                                <div class="col-md col-12">
+                                    <input
+                                        type="text"
+                                        inputmode="numeric"
+                                        class="form-control my-3"
+                                        id="firstInput"
+                                        placeholder="Cantidad"
+                                        required
+                                    />
+                                </div>
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button
-                                    type="submit"
-                                    class="btn btn-primary my-2 w-25 fw-bold"
+                                    type="button"
+                                    class="btn btn-primary my-2 fw-bold"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse3"
+                                    aria-expanded="false"
+                                    aria-controls="collapse3"
                                 >
                                     Enviar
                                 </button>
@@ -153,6 +186,9 @@
                                 class="text-center fw-bold"
                             ></div>
                         </form>
+                        <div class="collapse" id="collapse3">
+                            <div class="card card-body"></div>
+                        </div>
                     </article>
                 </div>
             </section>
@@ -192,19 +228,36 @@
                             </ul>
                         </div>
                         <form>
-                            <div class="mb-3">
-                                <input
-                                    type="text"
-                                    inputmode="numeric"
-                                    class="form-control my-3"
-                                    id="firstInput"
-                                    placeholder="Ingrese un número"
-                                />
+                            <div class="row">
+                                <div class="col-md col-12">
+                                    <input
+                                        type="text"
+                                        inputmode="numeric"
+                                        class="form-control my-3"
+                                        id="firstInput"
+                                        placeholder="Ingrese la edad"
+                                        required
+                                    />
+                                </div>
+                                <div class="col-md col-12">
+                                    <select
+                                        class="form-select my-3"
+                                        aria-label="Gender select"
+                                    >
+                                        <option selected>Género</option>
+                                        <option value="male">Masculino</option>
+                                        <option value="female">Femenino</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button
-                                    type="submit"
-                                    class="btn btn-primary my-2 w-25 fw-bold"
+                                    type="button"
+                                    class="btn btn-primary my-2 fw-bold"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse4"
+                                    aria-expanded="false"
+                                    aria-controls="collapse4"
                                 >
                                     Enviar
                                 </button>
@@ -214,6 +267,9 @@
                                 class="text-center fw-bold"
                             ></div>
                         </form>
+                        <div class="collapse" id="collapse4">
+                            <div class="card card-body"></div>
+                        </div>
                     </article>
                 </div>
                 <div class="col-6">
@@ -225,15 +281,18 @@
                             que:
                             <ul>
                                 <li>
-                                    Si el promedio fue menor a 3 no se le descuenta nada.
+                                    Si el promedio fue menor a 3 no se le
+                                    descuenta nada.
                                 </li>
                                 <li>
-                                    Cuando el promedio sea entre 3 y 4 se le descuenta el 5%.
+                                    Cuando el promedio sea entre 3 y 4 se le
+                                    descuenta el 5%.
                                 </li>
                                 <li>
-                                    Cuando el promedio sea mayor que 4, se le descuenta 50%.
+                                    Cuando el promedio sea mayor que 4, se le
+                                    descuenta 50%.
                                 </li>
-                                </ul>
+                            </ul>
                         </div>
                         <form>
                             <div class="mb-3">
@@ -242,13 +301,18 @@
                                     inputmode="numeric"
                                     class="form-control my-3"
                                     id="firstInput"
-                                    placeholder="Ingrese un número"
+                                    placeholder="Ingrese el promedio"
+                                    required
                                 />
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button
-                                    type="submit"
-                                    class="btn btn-primary my-2 w-25 fw-bold"
+                                    type="button"
+                                    class="btn btn-primary my-2 fw-bold"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse5"
+                                    aria-expanded="false"
+                                    aria-controls="collapse5"
                                 >
                                     Enviar
                                 </button>
@@ -258,6 +322,9 @@
                                 class="text-center fw-bold"
                             ></div>
                         </form>
+                        <div class="collapse" id="collapse5">
+                            <div class="card card-body"></div>
+                        </div>
                     </article>
                 </div>
             </section>

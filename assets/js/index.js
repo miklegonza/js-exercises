@@ -67,6 +67,8 @@ function multiply(number, amount) {
         table.push(`${number} x ${i} = ${number * i}`);
     }
 
+    table.splice()
+
     return table;
 }
 
