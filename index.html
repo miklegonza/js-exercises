@@ -64,7 +64,7 @@
                             Se necesitan sumar los números del 1 a n, donde n es
                             un número que le pedimos al usuario.
                         </p>
-                        <form>
+                        <form id="exercise1">
                             <div class="mb-3">
                                 <input
                                     type="text"
@@ -77,20 +77,14 @@
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button
-                                    type="button"
+                                    type="submit"
                                     class="btn btn-primary my-2 fw-bold"
                                     data-bs-toggle="collapse"
-                                    data-bs-target="#collapse1"
                                     aria-expanded="false"
-                                    aria-controls="collapse1"
                                 >
                                     Enviar
                                 </button>
                             </div>
-                            <div
-                                id="firstResult"
-                                class="text-center fw-bold"
-                            ></div>
                         </form>
                         <div class="collapse" id="collapse1">
                             <div class="card card-body"></div>
@@ -104,7 +98,7 @@
                             Se necesita validar si un número ingresado por el
                             usuario es par o impar.
                         </p>
-                        <form>
+                        <form id="exercise2">
                             <div class="mb-3">
                                 <input
                                     type="text"
@@ -117,20 +111,14 @@
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button
-                                    type="button"
+                                    type="submit"
                                     class="btn btn-primary my-2 fw-bold"
                                     data-bs-toggle="collapse"
-                                    data-bs-target="#collapse2"
                                     aria-expanded="false"
-                                    aria-controls="collapse2"
                                 >
                                     Enviar
                                 </button>
                             </div>
-                            <div
-                                id="secondResult"
-                                class="text-center fw-bold"
-                            ></div>
                         </form>
                         <div class="collapse" id="collapse2">
                             <div class="card card-body"></div>
@@ -146,14 +134,14 @@
                             se debe mostrar el total de las multiplicaciones
                             solicitadas por el mismo.
                         </p>
-                        <form>
+                        <form id="exercise3">
                             <div class="row">
                                 <div class="col-md col-12">
                                     <input
                                         type="text"
                                         inputmode="numeric"
                                         class="form-control my-3"
-                                        id="firstInput"
+                                        id="thirdInput1"
                                         placeholder="Número"
                                         required
                                     />
@@ -163,7 +151,7 @@
                                         type="text"
                                         inputmode="numeric"
                                         class="form-control my-3"
-                                        id="firstInput"
+                                        id="thirdInput2"
                                         placeholder="Cantidad"
                                         required
                                     />
@@ -171,23 +159,20 @@
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button
-                                    type="button"
+                                    type="submit"
                                     class="btn btn-primary my-2 fw-bold"
                                     data-bs-toggle="collapse"
-                                    data-bs-target="#collapse3"
                                     aria-expanded="false"
-                                    aria-controls="collapse3"
                                 >
                                     Enviar
                                 </button>
                             </div>
-                            <div
-                                id="firstResult"
-                                class="text-center fw-bold"
-                            ></div>
                         </form>
                         <div class="collapse" id="collapse3">
-                            <div class="card card-body"></div>
+                            <div class="card card-body flex-row">
+                                <div id="col1" class="col"></div>
+                                <div id="col2" class="col"></div>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -227,24 +212,25 @@
                                 </li>
                             </ul>
                         </div>
-                        <form>
+                        <form id="exercise4">
                             <div class="row">
                                 <div class="col-md col-12">
                                     <input
                                         type="text"
                                         inputmode="numeric"
                                         class="form-control my-3"
-                                        id="firstInput"
+                                        id="fourthInput1"
                                         placeholder="Ingrese la edad"
                                         required
                                     />
                                 </div>
                                 <div class="col-md col-12">
                                     <select
+                                        id="fourthInput2"
                                         class="form-select my-3"
                                         aria-label="Gender select"
                                     >
-                                        <option selected>Género</option>
+                                        <option value="default" selected>Género</option>
                                         <option value="male">Masculino</option>
                                         <option value="female">Femenino</option>
                                     </select>
@@ -252,20 +238,14 @@
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button
-                                    type="button"
+                                    type="submit"
                                     class="btn btn-primary my-2 fw-bold"
                                     data-bs-toggle="collapse"
-                                    data-bs-target="#collapse4"
                                     aria-expanded="false"
-                                    aria-controls="collapse4"
                                 >
                                     Enviar
                                 </button>
                             </div>
-                            <div
-                                id="firstResult"
-                                class="text-center fw-bold"
-                            ></div>
                         </form>
                         <div class="collapse" id="collapse4">
                             <div class="card card-body"></div>
@@ -294,33 +274,27 @@
                                 </li>
                             </ul>
                         </div>
-                        <form>
+                        <form id="exercise5">
                             <div class="mb-3">
                                 <input
                                     type="text"
                                     inputmode="numeric"
                                     class="form-control my-3"
-                                    id="firstInput"
+                                    id="fifthInput"
                                     placeholder="Ingrese el promedio"
                                     required
                                 />
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button
-                                    type="button"
+                                    type="submit"
                                     class="btn btn-primary my-2 fw-bold"
                                     data-bs-toggle="collapse"
-                                    data-bs-target="#collapse5"
                                     aria-expanded="false"
-                                    aria-controls="collapse5"
                                 >
                                     Enviar
                                 </button>
                             </div>
-                            <div
-                                id="firstResult"
-                                class="text-center fw-bold"
-                            ></div>
                         </form>
                         <div class="collapse" id="collapse5">
                             <div class="card card-body"></div>
