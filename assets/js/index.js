@@ -3,6 +3,7 @@ const exercise2 = document.getElementById('exercise2');
 const exercise3 = document.getElementById('exercise3');
 const exercise4 = document.getElementById('exercise4');
 const exercise5 = document.getElementById('exercise5');
+const exercise6 = document.getElementById('exercise6');
 
 const divResult1 = document.querySelector('#collapse1 div');
 const divResult2 = document.querySelector('#collapse2 div');
@@ -10,12 +11,32 @@ const divResult3Col1 = document.querySelector('#col1');
 const divResult3Col2 = document.querySelector('#col2');
 const divResult4 = document.querySelector('#collapse4 div');
 const divResult5 = document.querySelector('#collapse5 div');
+const divResult6 = document.querySelector('#collapse6 div');
 
 const collapse1 = new bootstrap.Collapse('#collapse1', { toggle: false });
 const collapse2 = new bootstrap.Collapse('#collapse2', { toggle: false });
 const collapse3 = new bootstrap.Collapse('#collapse3', { toggle: false });
 const collapse4 = new bootstrap.Collapse('#collapse4', { toggle: false });
 const collapse5 = new bootstrap.Collapse('#collapse5', { toggle: false });
+const collapse6 = new bootstrap.Collapse('#collapse6', { toggle: false });
+
+const badges = document.querySelectorAll('[data-item]');
+const productInput = document.getElementById('datalistInput');
+const priceInput = document.getElementById('priceInput');
+const validateButton = document.getElementById('validatePrice');
+const submit6Button = document.getElementById('submitButton');
+
+const menu = [
+    { id: 1, product: 'salchipapa', price: 20000 },
+    { id: 2, product: 'ensalada', price: 15000 },
+    { id: 3, product: 'alitas', price: 25000 },
+    { id: 4, product: 'papas con queso', price: 10000 },
+    { id: 5, product: 'alfajor', price: 5000 },
+    { id: 6, product: 'limonada', price: 7000 },
+    { id: 7, product: 'awita', price: 1000 },
+];
+
+let order = [];
 
 exercise1.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -103,6 +124,51 @@ exercise5.addEventListener('submit', (event) => {
     }
 });
 
+exercise6.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const product = productInput.value.toLowerCase();
+    const price = parseInt(priceInput.value);
+    if (product === 'pagar') {
+        const result = finishOrder();
+        divResult6.innerHTML = `El valor total a pagar es: &dollar;${result}`;
+        collapse6.show();
+    } else {
+        addToOrder(product, price);
+        productInput.value = '';
+        priceInput.value = '';
+        console.log(`${product} agregado`);
+        submit6Button.disabled = true;
+    }
+});
+
+validateButton.addEventListener('click', () => {
+    const product = productInput.value.toLowerCase();
+    const item = menu.find((item) => item.product === product);
+    if (item) {
+        priceInput.value = item.price;
+        submit6Button.disabled = false;
+    } else if (product === 'pagar') {
+        if (order.length < 1) {
+            alert('Debe agregar al menos un elemento a la orden');
+            collapse6.hide();
+            return;
+        }
+        submit6Button.disabled = false;
+    } else {
+        alert('El elemento no se encuentra en el menú');
+    }
+});
+
+badges.forEach((badge) => {
+    badge.addEventListener('click', () => {
+        const itemId = parseInt(badge.getAttribute('data-item'));
+        const product = menu.find((element) => element.id === itemId);
+        productInput.value = product.product;
+        priceInput.value = product.price;
+    });
+});
+
 /*
 1.  Se necesitan sumar los números del 1 a n, donde n es 
     un número que le pedimos al usuario.
@@ -155,6 +221,33 @@ function prize(age, gender) {
             : 'una porción de pizza hawaiana.';
 
     return `Su premio es: ${drink} y ${pizza}`;
+}
+
+/*
+4.  Se necesita crear un menú de opciones, donde la 
+    persona escriba que quiere de comer, se le vaya 
+    sumando el valor a lo seleccionado hasta que el 
+    usuario escriba pagar, Una vez termine de comprar, 
+    se le debe mostrar el valor que debe pagar. 
+    (El menú y precios lo decide el programado@r.) 
+    Con 2 arrays o con 1 array de objetos FIND
+*/
+function addToOrder(product, price) {
+    const newItem = menu.findIndex((item) => item.product === product);
+    if (newItem !== -1) {
+        order.push({ product, price });
+        return true;
+    }
+    return false;
+}
+
+function finishOrder() {
+    let result = 0;
+    for (const object of order) {
+        result += object.price;
+    }
+    order = [];
+    return result;
 }
 
 /*
