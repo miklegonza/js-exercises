@@ -51,7 +51,7 @@ exercise1.addEventListener('submit', (event) => {
         divResult1.innerHTML = `El resultado es ${result}`;
         collapse1.show();
     } else {
-        alert('Debe ingresar un número');
+        throwAlert();
         collapse1.hide();
     }
 });
@@ -66,7 +66,7 @@ exercise2.addEventListener('submit', (event) => {
         divResult2.innerHTML = result;
         collapse2.show();
     } else {
-        alert('Debe ingresar un número');
+        throwAlert();
         collapse2.hide();
     }
 });
@@ -93,7 +93,7 @@ exercise3.addEventListener('submit', (event) => {
         divResult3Col2.innerHTML = result2;
         collapse3.show();
     } else {
-        alert('Debe ingresar un número');
+        throwAlert();
         collapse3.hide();
     }
 });
@@ -109,7 +109,7 @@ exercise4.addEventListener('submit', (event) => {
         divResult4.innerHTML = result;
         collapse4.show();
     } else {
-        alert('Debe ingresar un número');
+        throwAlert();
         collapse4.hide();
     }
 });
@@ -121,9 +121,10 @@ exercise5.addEventListener('submit', (event) => {
     if (!isNaN(number)) {
         let result = getValue(number);
         divResult5.innerHTML = `El valor a pagar es ${result}`;
+        submit6Button.disabled = true;
         collapse5.show();
     } else {
-        alert('Debe ingresar un número');
+        throwAlert();
         collapse5.hide();
     }
 });
@@ -153,13 +154,13 @@ validateButton.addEventListener('click', () => {
         submit6Button.disabled = false;
     } else if (product === 'pagar') {
         if (order.length < 1) {
-            alert('Debe agregar al menos un elemento a la orden');
+            throwAlert('Debe agregar al menos un elemento a la orden');
             collapse6.hide();
             return;
         }
         submit6Button.disabled = false;
     } else {
-        alert('El elemento no se encuentra en el menú');
+        throwAlert('El elemento no se encuentra en el menú');
     }
 });
 
@@ -191,7 +192,7 @@ exercise7.addEventListener('submit', (event) => {
         divResult7.innerHTML = result;
         collapse7.show();
     } else {
-        alert(addElement);
+        throwAlert(addElement);
     }
 });
 
@@ -333,4 +334,13 @@ function addToArray(element, position) {
         arr.push(element);
     }
     return element;
+}
+
+/* Sweet Alert */
+function throwAlert(message) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: message || 'Debe ingresar un número',
+    });
 }
