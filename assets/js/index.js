@@ -4,6 +4,7 @@ const exercise3 = document.getElementById('exercise3');
 const exercise4 = document.getElementById('exercise4');
 const exercise5 = document.getElementById('exercise5');
 const exercise6 = document.getElementById('exercise6');
+const exercise7 = document.getElementById('exercise7');
 
 const divResult1 = document.querySelector('#collapse1 div');
 const divResult2 = document.querySelector('#collapse2 div');
@@ -12,6 +13,7 @@ const divResult3Col2 = document.querySelector('#col2');
 const divResult4 = document.querySelector('#collapse4 div');
 const divResult5 = document.querySelector('#collapse5 div');
 const divResult6 = document.querySelector('#collapse6 div');
+const divResult7 = document.querySelector('#collapse7 div');
 
 const collapse1 = new bootstrap.Collapse('#collapse1', { toggle: false });
 const collapse2 = new bootstrap.Collapse('#collapse2', { toggle: false });
@@ -19,6 +21,7 @@ const collapse3 = new bootstrap.Collapse('#collapse3', { toggle: false });
 const collapse4 = new bootstrap.Collapse('#collapse4', { toggle: false });
 const collapse5 = new bootstrap.Collapse('#collapse5', { toggle: false });
 const collapse6 = new bootstrap.Collapse('#collapse6', { toggle: false });
+const collapse7 = new bootstrap.Collapse('#collapse7', { toggle: false });
 
 const badges = document.querySelectorAll('[data-item]');
 const productInput = document.getElementById('datalistInput');
@@ -37,6 +40,7 @@ const menu = [
 ];
 
 let order = [];
+let arr = [];
 
 exercise1.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -137,7 +141,6 @@ exercise6.addEventListener('submit', (event) => {
         addToOrder(product, price);
         productInput.value = '';
         priceInput.value = '';
-        console.log(`${product} agregado`);
         submit6Button.disabled = true;
     }
 });
@@ -167,6 +170,29 @@ badges.forEach((badge) => {
         productInput.value = product.product;
         priceInput.value = product.price;
     });
+});
+
+exercise7.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const element = event.target.seventhInput1.value;
+    const position = event.target.seventhInput2.value;
+
+    let addElement =
+        position.length > 0
+            ? addToArray(element, position)
+            : addToArray(element);
+
+    if (addElement === element) {
+        let result = '';
+        for (let i = 0; i < arr.length; i++) {
+            result += `${i}. ${arr[i]} <br>`;
+        }
+        divResult7.innerHTML = result;
+        collapse7.show();
+    } else {
+        alert(addElement);
+    }
 });
 
 /*
@@ -278,6 +304,33 @@ function multiply(number, amount) {
 function getValue(average) {
     let value = 1000000;
     if (average >= 3 && average <= 4) value *= 0.95;
-    if (average > 4) value *= 0.5;
+    if (average > 4 && average <= 5) value *= 0.5;
     return value;
+}
+
+/*
+7.  Desarrolla un formulario interactivo en JavaScript para agregar 
+    elementos dinámicamente a un arreglo. Implementa la lógica necesaria 
+    para evitar la duplicación de elementos y permitir la inserción en 
+    posiciones específicas. Asegúrate de actualizar la interfaz de usuario 
+    para reflejar los cambios realizados en el arreglo.
+*/
+function addToArray(element, position) {
+    const elementExists = arr.findIndex(
+        (item) => item.toLowerCase() === element.toLowerCase()
+    );
+    if (elementExists !== -1)
+        return `El valor ${element} ya existe en el array`;
+
+    if (position) {
+        const positionExists = arr.findIndex(
+            (item) => item.toLowerCase() === position.toLowerCase()
+        );
+        if (positionExists === -1)
+            return `El elemento de posición (${position}) no existe en el arreglo`;
+        arr.splice(positionExists + 1, 0, element);
+    } else {
+        arr.push(element);
+    }
+    return element;
 }

@@ -55,10 +55,10 @@
         </nav>
 
         <main class="container my-5">
-            <section class="row mb-5">
+            <section class="row mb-4">
                 <div class="col-4">
-                    <article class="bg-info-subtle px-4 py-3 mx-3 rounded">
-                        <h3>Sumas</h3>
+                    <article class="bg-info-subtle px-4 py-3 rounded">
+                        <h3>1. Sumas</h3>
                         <p class="m-0">
                             Se necesitan sumar los números del 1 a n, donde n es
                             un número que le pedimos al usuario.
@@ -90,9 +90,9 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                     <article class="bg-info-subtle px-4 py-3 rounded">
-                        <h3>Pares</h3>
+                        <h3>2. Pares</h3>
                         <p class="m-0">
                             Se necesita validar si un número ingresado por el
                             usuario es par o impar.
@@ -124,9 +124,9 @@
                         </div>
                     </article>
                 </div>
-                <div class="col-4">
-                    <article class="bg-info-subtle px-4 py-3 mx-3 rounded">
-                        <h3>Multiplicación</h3>
+                <div class="col-5">
+                    <article class="bg-info-subtle px-4 py-3 rounded">
+                        <h3>5. Multiplicación</h3>
                         <p class="m-0">
                             Se le debe pedir al usuario un número y mostrar la
                             tabla de multiplicar de ese número, adicionalmente,
@@ -176,16 +176,16 @@
                     </article>
                 </div>
             </section>
-            <section class="row mb-5">
-                <div class="col-6">
-                    <article class="bg-info-subtle px-4 py-3 mx-3 rounded">
-                        <h3>Pizzería</h3>
+            <section class="row mb-4">
+                <div class="col-5">
+                    <article class="bg-info-subtle px-4 py-3 rounded">
+                        <h3>3. Pizzería</h3>
                         <div>
                             La pizzería Pepitos requiere un algoritmo que
                             permita informarle a los usuarios si reciben o no un
                             premio por parte del negocio, se tienen las
                             siguientes validaciones:
-                            <ul>
+                            <ul class="m-0">
                                 <li>
                                     Si es una persona menor o igual a 10 años,
                                     debe ir a reclamar un jugo.
@@ -253,9 +253,191 @@
                         </div>
                     </article>
                 </div>
+                <div class="col-7">
+                    <article class="bg-info-subtle px-4 py-3 rounded">
+                        <div class="row">
+                            <div class="col-7">
+                                <h3>4. Compra</h3>
+                                <div>
+                                    Se necesita crear un menú de opciones, donde
+                                    la persona escriba que quiere de comer, se
+                                    le vaya sumando el valor a lo seleccionado
+                                    hasta que el usuario escriba pagar, Una vez
+                                    termine de comprar, se le debe mostrar el
+                                    valor que debe pagar. (El menú y precios lo
+                                    decide el programado@r.)
+                                </div>
+                                <form id="exercise6">
+                                    <div class="row">
+                                        <div class="col-lg col-12">
+                                            <input
+                                                type="text"
+                                                class="form-control my-3"
+                                                id="datalistInput"
+                                                list="datalistOptions"
+                                                placeholder="Ingrese lo que desea comer"
+                                                required
+                                            />
+                                            <datalist id="datalistOptions">
+                                                <option
+                                                    value="Salchipapa"
+                                                ></option>
+                                                <option
+                                                    value="Ensalada"
+                                                ></option>
+                                                <option value="Alitas"></option>
+                                                <option
+                                                    value="Papas con queso"
+                                                ></option>
+                                                <option
+                                                    value="Alfajor"
+                                                ></option>
+                                                <option
+                                                    value="Limonada"
+                                                ></option>
+                                                <option value="Awita"></option>
+                                                <option value="Pagar"></option>
+                                            </datalist>
+                                        </div>
+                                        <div class="col-md col-12">
+                                            <input
+                                                type="text"
+                                                inputmode="numeric"
+                                                class="form-control my-3"
+                                                id="priceInput"
+                                                placeholder="Precio"
+                                                disabled
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-center gap-3"
+                                    >
+                                        <button
+                                            id="validatePrice"
+                                            type="button"
+                                            class="btn btn-primary my-2 fw-bold"
+                                            data-bs-toggle="collapse"
+                                            aria-expanded="false"
+                                        >
+                                            Validar
+                                        </button>
+                                        <button
+                                            id="submitButton"
+                                            type="submit"
+                                            class="btn btn-primary my-2 fw-bold"
+                                            data-bs-toggle="collapse"
+                                            aria-expanded="false"
+                                            disabled
+                                        >
+                                            Enviar
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-5">
+                                <ul class="list-group mb-2">
+                                    <li class="list-group-item">
+                                        <h4 class="m-0">Menú</h4>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-start"
+                                    >
+                                        Salchipapa
+                                        <button
+                                            type="button"
+                                            class="btn border-0 badge text-bg-primary rounded-pill"
+                                            data-item="1"
+                                        >
+                                            Agregar
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-start"
+                                    >
+                                        Ensalada
+                                        <button
+                                            type="button"
+                                            class="btn border-0 badge text-bg-primary rounded-pill"
+                                            data-item="2"
+                                        >
+                                            Agregar
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-start"
+                                    >
+                                        Alitas
+                                        <button
+                                            type="button"
+                                            class="btn border-0 badge text-bg-primary rounded-pill"
+                                            data-item="3"
+                                        >
+                                            Agregar
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-start"
+                                    >
+                                        Papas con queso
+                                        <button
+                                            type="button"
+                                            class="btn border-0 badge text-bg-primary rounded-pill"
+                                            data-item="4"
+                                        >
+                                            Agregar
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-start"
+                                    >
+                                        Alfajor
+                                        <button
+                                            type="button"
+                                            class="btn border-0 badge text-bg-primary rounded-pill"
+                                            data-item="5"
+                                        >
+                                            Agregar
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-start"
+                                    >
+                                        Limonada
+                                        <button
+                                            type="button"
+                                            class="btn border-0 badge text-bg-primary rounded-pill"
+                                            data-item="6"
+                                        >
+                                            Agregar
+                                        </button>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-start"
+                                    >
+                                        Awita
+                                        <button
+                                            type="button"
+                                            class="btn border-0 badge text-bg-primary rounded-pill"
+                                            data-item="7"
+                                        >
+                                            Agregar
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="collapse" id="collapse6">
+                                <div class="card card-body"></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+            </section>
+            <section class="row">
                 <div class="col-6">
-                    <article class="bg-info-subtle px-4 py-3 mx-3 rounded">
-                        <h3>Matrícula</h3>
+                    <article class="bg-info-subtle px-4 py-3 rounded">
+                        <h3>6. Matrícula</h3>
                         <div>
                             Validar cuál es el valor de matrícula (1'000.000)
                             que debe pagar un estudiante, teniendo en cuenta
@@ -302,175 +484,55 @@
                         </div>
                     </article>
                 </div>
-            </section>
-            <section class="row">
-                <div class="col-8">
-                    <article class="row bg-info-subtle px-4 py-3 mx-3 rounded">
-                        <div class="col-7">
-                            <h3>Compra</h3>
-                            <div>
-                                Se necesita crear un menú de opciones, donde la
-                                persona escriba que quiere de comer, se le vaya
-                                sumando el valor a lo seleccionado hasta que el
-                                usuario escriba pagar, Una vez termine de
-                                comprar, se le debe mostrar el valor que debe
-                                pagar. (El menú y precios lo decide el
-                                programado@r.)
-                            </div>
-                            <form id="exercise6">
-                                <div class="row">
-                                    <div class="col-lg col-12">
-                                        <input
-                                            type="text"
-                                            class="form-control my-3"
-                                            id="datalistInput" list="datalistOptions"
-                                            placeholder="Ingrese lo que desea comer"
-                                            required
-                                        />
-                                        <datalist id="datalistOptions">
-                                            <option value="Salchipapa">
-                                            <option value="Ensalada">
-                                            <option value="Alitas">
-                                            <option value="Papas con queso">
-                                            <option value="Alfajor">
-                                            <option value="Limonada">
-                                            <option value="Agüita">
-                                            <option value="Pagar">
-                                        </datalist>
-                                    </div>
-                                    <div class="col-md col-12">
-                                        <input
-                                            type="text"
-                                            inputmode="numeric"
-                                            class="form-control my-3"
-                                            id="priceInput"
-                                            placeholder="Precio"
-                                            disabled
-                                        />
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-center gap-3">
-                                    <button
-                                        id="validatePrice"
-                                        type="button"
-                                        class="btn btn-primary my-2 fw-bold"
-                                        data-bs-toggle="collapse"
-                                        aria-expanded="false"
-                                    >
-                                        Validar
-                                    </button>
-                                    <button
-                                        id="submitButton"
-                                        type="submit"
-                                        class="btn btn-primary my-2 fw-bold"
-                                        data-bs-toggle="collapse"
-                                        aria-expanded="false"
-                                        disabled
-                                    >
-                                        Enviar
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-5">
-                            <ul class="list-group mb-2">
-                                <li class="list-group-item">
-                                    <h4 class="m-0">Menú</h4>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start">
-                                    Salchipapa
-                                    <button type="button" class="btn border-0 badge text-bg-primary rounded-pill" data-item="1">
-                                        Agregar
-                                    </button>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start">
-                                    Ensalada
-                                    <button type="button" class="btn border-0 badge text-bg-primary rounded-pill" data-item="2">
-                                        Agregar
-                                    </button>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start">
-                                    Alitas
-                                    <button type="button" class="btn border-0 badge text-bg-primary rounded-pill" data-item="3">
-                                        Agregar
-                                    </button>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start">
-                                    Papas con queso
-                                    <button type="button" class="btn border-0 badge text-bg-primary rounded-pill" data-item="4">
-                                        Agregar
-                                    </button>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start">
-                                    Alfajor
-                                    <button type="button" class="btn border-0 badge text-bg-primary rounded-pill" data-item="5">
-                                        Agregar
-                                    </button>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start">
-                                    Limonada
-                                    <button type="button" class="btn border-0 badge text-bg-primary rounded-pill" data-item="6">
-                                        Agregar
-                                    </button>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-start">
-                                    Agüita
-                                    <button type="button" class="btn border-0 badge text-bg-primary rounded-pill" data-item="7">
-                                        Agregar
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="collapse" id="collapse6">
-                            <div class="card card-body"></div>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-4">
-                    <article class="bg-info-subtle px-4 py-3 mx-3 rounded">
+                <div class="col-6">
+                    <article class="bg-info-subtle px-4 py-3 rounded">
                         <div>
-                            <h3>Compra</h3>
+                            <h3>7. Elementos en un arreglo</h3>
                             <div>
-                                Se necesita crear un menú de opciones, donde la
-                                persona escriba que quiere de comer, se le vaya
-                                sumando el valor a l
+                                Desarrolla un formulario interactivo en
+                                JavaScript para agregar elementos dinámicamente
+                                a un arreglo. Implementa la lógica necesaria
+                                para evitar la duplicación de elementos y
+                                permitir la inserción en posiciones específicas.
+                                Asegúrate de actualizar la interfaz de usuario
+                                para reflejar los cambios
+                                realizados en el arreglo.
                             </div>
-                            <form id="exercise6">
-                                <div>
-                                    <div>
+                            <form id="exercise7">
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
                                         <input
                                             type="text"
                                             class="form-control my-3"
-                                            id="datalistInput" list="datalistOptions"
-                                            placeholder="Ingrese lo que desea comer"
+                                            id="seventhInput1"
+                                            placeholder="Valor nuevo"
                                             required
                                         />
                                     </div>
-                                    <div>
+                                    <div class="col-12 col-md-6">
                                         <input
                                             type="text"
-                                            inputmode="numeric"
                                             class="form-control my-3"
-                                            id="priceInput"
-                                            placeholder="Precio"
-                                            disabled
+                                            id="seventhInput2"
+                                            placeholder="Posición (opcional)"
                                         />
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-center gap-3">
+                                <div
+                                    class="d-flex justify-content-center gap-3"
+                                >
                                     <button
                                         type="submit"
                                         class="btn btn-primary my-2 fw-bold"
                                         data-bs-toggle="collapse"
                                         aria-expanded="false"
-                                        disabled
                                     >
                                         Enviar
                                     </button>
                                 </div>
                             </form>
                         </div>
-                        <div class="collapse" id="collapse6">
+                        <div class="collapse" id="collapse7">
                             <div class="card card-body"></div>
                         </div>
                     </article>
